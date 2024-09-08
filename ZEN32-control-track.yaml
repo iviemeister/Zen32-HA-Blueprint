@@ -670,7 +670,6 @@ blueprint:
           selector:
             action:
 #############
-mode: parallel
 max: 10
 variables:
   controller_id: !input 'zooz_switch'
