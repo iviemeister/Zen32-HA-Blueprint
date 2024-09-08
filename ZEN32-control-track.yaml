@@ -10,6 +10,17 @@ blueprint:
     min_version: 2024.6.0
 
   input:
+    automation_mode:
+      name: Automation mode
+      description: See https://www.home-assistant.io/docs/automation/modes/
+      default: single
+      selector:
+        select:
+          options:
+            - single
+            - restart
+            - queued
+            - parallel
     Switch_params:
       name: Switch and Paramters
       input:
@@ -1062,3 +1073,5 @@ action:
             value: '{{ input_p24 }}'
           target:
             device_id: '{{ controller_id }}'
+mode: !input automation_mode
+max_exceeded: silent
